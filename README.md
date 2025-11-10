@@ -1,51 +1,68 @@
-# Welcome to your Expo app 👋
+# UniEats
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A smart recipe app for university students that turns fridge photos into meal ideas.
 
-## Get started
+## The Problem
 
-1. Install dependencies
+You open your fridge and stare. You have ingredients but no idea what to make. Especially as a student, you need meals that are:
 
-   ```bash
-   npm install
-   ```
+- Quick to cook (you have class in 30 minutes)
+- Fit your goals (gym gains, cutting, or just tasty comfort food)
+- Use what you already have (no extra shopping)
 
-2. Start the app
+## The Solution
 
-   ```bash
-   npx expo start
-   ```
+1. **Snap a photo** of your fridge
+2. **AI identifies** what ingredients you have
+3. **Select what's yours** (ignore your roommate's leftovers or family's food)
+4. **Get recipes** filtered by your needs: quick meals, high protein, bulking, low-cal, or just something good
 
-In the output, you'll find options to open the app in a
+## What Makes This Different
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Most recipe apps assume you'll go shopping for ingredients. This one works backwards - it starts with what you have and suggests what's actually possible to make right now.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+**Smart Filters:**
 
-## Get a fresh project
+- Time-based: "I have 10 minutes"
+- Fitness: "High protein, low carb"
+- Skill: "Microwave only"
+- Vibe: "Comfort food" vs "Clean eating"
 
-When you're ready, run:
+**Shared Living Friendly:**
+
+- Crop photos to your shelf
+- Tap to select only your ingredients
+- Future: roommate sharing features
+
+## Planned Features
+
+**MVP (Current Focus):**
+
+- Camera/gallery photo capture
+- Vision AI detection of fridge items
+- Manual selection of available ingredients
+- Recipe suggestions with niche filters
+
+**Future Ideas:**
+
+- Expiry tracking with "use it up" mode
+- Macro calculator per recipe
+- Shopping list sync
+- Cost per meal tracking
+- Meal prep planner
+- Leftover transformer
+- Social pantry for roommates
+
+## Tech Approach
+
+- **Mobile**: React Native + Expo
+- **AI**: OpenAI Vision API for ingredient detection
+- **Backend**: Express server to keep API keys secure
+- **Deployment**: Vercel
+
+## Getting Started
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# unieats
