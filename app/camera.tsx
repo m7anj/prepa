@@ -24,15 +24,10 @@ const camera = () => {
 
   return (
     <View style={{ flex: 1 }}>
-
-      <CameraView style={{ flex: 1 }}>
-      </CameraView>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-
-        <PhotoButton onPress={test}></PhotoButton>
-
+      <CameraView style={{ flex: 1 }} />
+      <View className="absolute bottom-12 self-center">
+        <PhotoButton onPress={test} />
       </View>
-      
     </View>
   );
 }

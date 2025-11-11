@@ -17,12 +17,12 @@ const styles =
 StyleSheet.create({
     button: {
       width: 70,
-      height: 20,
+      height: 70,
       borderRadius: 35,
       backgroundColor: 'white',
       borderWidth: 4,
       borderColor:
-  'rgba(255,255,255,0.5)',
+  'rgba(49, 49, 49, 0.5)',
     }
   });
 

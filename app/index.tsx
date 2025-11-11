@@ -14,7 +14,7 @@ export default function Index() {
       <Text className="text-2xl color-hint-dark text-center">
         Eat smart, eat fast, eat what you have.
       </Text>
-      <Link href="/camera">
+      <Link href="/camera" className="mt-16">
         <Text className="text-2xl color-hint-dark text-center">
           Get Started! 📷
         </Text>
