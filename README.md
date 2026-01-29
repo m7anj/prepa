@@ -18,7 +18,7 @@ University students face daily friction when cooking:
 ## User Flow
 
 ```
-1. Tap "Scan Your Fridge"
+1. Tap "Scan Your Fridge" (ideally you would take many if visibility is poor from 1 singular picture)
 2. Take photo of ingredients
 3. AI detects visible items
 4. Select only what's yours (tap to include/exclude)
@@ -37,6 +37,7 @@ Take a photo of your fridge, pantry, or counter. OpenAI Vision detects all visib
 Detected ingredients appear as selectable chips. Tap to include only what belongs to you. Manually add items the AI missed.
 
 **Diet Filters**
+
 - High Protein: protein-focused meals
 - Keto: low carb, high fat
 - High Calorie: for bulking or weight gain
@@ -67,87 +68,11 @@ Sorted by ingredient match, protein content, or cook time. Shows what you have v
 
 ## Architecture
 
-### Frontend Structure
-```
-/src
-  /screens
-    HomeScreen.tsx           # Main entry, "Scan Fridge" CTA
-    CameraScreen.tsx         # Photo capture
-    IngredientsScreen.tsx    # Select your ingredients
-    FiltersScreen.tsx        # Select diet/time/constraints
-    RecipesScreen.tsx        # Recipe results list
-    RecipeDetailScreen.tsx   # Single recipe view
-  /components
-    IngredientChip.tsx       # Selectable ingredient pill
-    FilterButton.tsx         # Toggle filter buttons
-    RecipeCard.tsx           # Recipe preview card
-    NutritionBadge.tsx       # Protein/carb/fat display
-  /services
-    api.ts                   # Backend API calls
-    imageService.ts          # Image handling
-  /hooks
-    useCamera.ts
-    useIngredients.ts
-    useRecipes.ts
-  /context
-    AppContext.tsx           # Global state
-```
-
-### Backend Structure
-```
-/server
-  /routes
-    ingredients.ts           # POST image -> ingredient list
-    recipes.ts               # POST ingredients + filters -> recipes
-  /services
-    openaiService.ts         # OpenAI Vision API calls
-    recipeService.ts         # Recipe matching logic
-  /data
-    recipes.json             # Curated recipe database
-  index.ts                   # Express server entry
-```
-
-### Data Flow
 ```
 Photo -> Backend -> OpenAI Vision -> Ingredient list
 -> User selects ingredients + filters
 -> Backend matches recipes, scores by ingredient coverage
 -> Sorted results returned to frontend
-```
-
-## Recipe Data Model
-
-```typescript
-interface Recipe {
-  id: string;
-  name: string;
-  description: string;
-  imageUrl?: string;
-  ingredients: Ingredient[];
-  instructions: string[];
-  prepTime: number;           // minutes
-  cookTime: number;           // minutes
-  totalTime: number;          // minutes
-  servings: number;
-  nutrition: {
-    calories: number;
-    protein: number;          // grams
-    carbs: number;            // grams
-    fat: number;              // grams
-  };
-  tags: string[];             // "high-protein", "keto", "quick"
-  equipment: string[];        // "microwave", "oven", "stovetop"
-  dietary: string[];          // "vegetarian", "vegan", "halal"
-  difficulty: "easy" | "medium" | "hard";
-}
-
-interface Ingredient {
-  name: string;
-  amount: number;
-  unit: string;
-  optional?: boolean;
-  substitutes?: string[];
-}
 ```
 
 ## AI Ingredient Detection
@@ -167,6 +92,7 @@ Categories: protein, carbs, vegetables, fruits, dairy, condiment, spices, other
 ## What Makes It Different
 
 No other app combines:
+
 1. Photo scanning of fridge contents
 2. Ingredient selection for shared living
 3. Diet-specific filtering (keto, high protein, high cal, etc.)
