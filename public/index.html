@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prepa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header>
+      <span class="wordmark">prepa</span>
+      <button class="how" aria-expanded="false" aria-controls="drawer">How it works</button>
+    </header>
+
+    <section class="core">
+      <h1>Scan your fridge.<br>Cook what's <em>yours</em>.</h1>
+      <p class="sub">Photo recognition for shared kitchens. Filter by diet, time, what you actually own.</p>
+    </section>
+
+    <footer>
+      <div class="flow">
+        <span>Photo</span>
+        <span class="arrow">&rarr;</span>
+        <span>Select</span>
+        <span class="arrow">&rarr;</span>
+        <span>Filter</span>
+        <span class="arrow">&rarr;</span>
+        <span>Eat</span>
+      </div>
+      <a href="#" class="cta">Coming soon</a>
+    </footer>
+
+    <aside id="drawer" class="drawer" aria-hidden="true">
+      <button class="close" aria-label="Close">&times;</button>
+      <div class="drawer-content">
+        <dl>
+          <dt>1. Photograph</dt>
+          <dd>Point at your fridge, pantry, counter. AI sees everything.</dd>
+          <dt>2. Claim</dt>
+          <dd>Tap ingredients that are yours. Ignore roommates' stuff.</dd>
+          <dt>3. Filter</dt>
+          <dd>High protein. Keto. 10 minutes. Microwave only.</dd>
+          <dt>4. Cook</dt>
+          <dd>Recipes matched to what you have, not what you don't.</dd>
+        </dl>
+        <p class="target">For students in shared housing who actually want to eat well.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const how = document.querySelector('.how');
+    const drawer = document.getElementById('drawer');
+    const close = document.querySelector('.close');
+
+    how.addEventListener('click', () => {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      how.setAttribute('aria-expanded', 'true');
+    });
+
+    close.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      how.setAttribute('aria-expanded', 'false');
+    });
+
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        how.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
