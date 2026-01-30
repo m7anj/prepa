@@ -1,6 +1,7 @@
-import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import express, { Request, Response } from 'express';
+import recipeRoutes from './routes/recipes';
 
 dotenv.config({ path: './backend/.env' });
 
@@ -16,8 +17,9 @@ app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
-// TODO: Add auth routes here
+// Routes
+app.use('/api/recipes', recipeRoutes);
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
