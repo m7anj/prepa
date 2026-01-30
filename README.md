@@ -1,7 +1,5 @@
 <p align="center">
   <img src="app/assets/text.png" alt="prepa" width="200">
-  <br><br>
-  <img src="app/assets/icon.png" alt="Prepa" width="120">
 </p>
 
 A recipe app for university students in shared housing who want to eat according to their dietary goals.
