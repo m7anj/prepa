@@ -146,9 +146,17 @@ h1 em {
 
 .comingsoon {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   padding-top: 1rem;
-  color: var(--gray);
+  color: var(--green);
+  font-weight: 500;
+  background: rgba(124, 200, 61, 0.08);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+  display: inline-block;
+  margin-top: 1.5rem;
+  letter-spacing: 0.01em;
 }
 
 footer {
@@ -172,6 +180,19 @@ footer {
 .stores {
   display: flex;
   gap: 1rem;
+  align-items: center;
+}
+
+.app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.app-icon:hover {
+  transform: scale(1.05);
 }
 
 .store-link {
@@ -281,6 +302,11 @@ dd {
     font-size: 1rem;
   }
 
+  .comingsoon {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+  }
+
   footer {
     flex-direction: column;
     align-items: flex-start;
@@ -293,6 +319,12 @@ dd {
 
   .stores {
     flex-wrap: wrap;
+  }
+
+  .app-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
   }
 
   .store-link span {
