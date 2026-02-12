@@ -13,13 +13,13 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text className="text-6xl color-primary-dark">UniEats</Text>
+      <Text className="text-6xl color-primary-dark">Prepa</Text>
       <Text className="text-1xl color-hint-dark text-center font-poppins">
         Eat smart, eat fast, eat what you have.
       </Text>
       <View className="mt-16">
         <MainButton onPress={() => router.push("/camera")}>
-          Get Started! 📷
+          Get Started!
         </MainButton>
       </View>
     </View>
